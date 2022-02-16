@@ -1,6 +1,8 @@
+using Bookstore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,13 @@ namespace Bookstore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<BookstoreContext> (options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:BookstoreDBConnection"]);
+            });
+
+            services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
