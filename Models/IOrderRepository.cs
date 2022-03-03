@@ -7,8 +7,8 @@ namespace Bookstore.Models
 {
     public interface IOrderRepository
     {
-        IQueryable<Order> Orders { get; }
+        public IQueryable<Order> Orders { get; }
 
-        void SaveOrder(Order order);
+        public void SaveOrder(Order order);
     }
 }
