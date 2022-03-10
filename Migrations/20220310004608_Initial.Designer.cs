@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220303045305_help")]
-    partial class help
+    [Migration("20220310004608_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -104,6 +104,9 @@ namespace Bookstore.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<bool>("Shipped")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("State")
                         .IsRequired()
