@@ -1,7 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="bg-info text-white p-2">
-    <span class="navbar-brand m-lg-2">Bookstore Administration</span>
+    <div class="container-fluid">
+        <!--Added align-items-center to center the title with the logout button-->
+        <div class="row align-items-center">
+            <div class="col">
+                <span class="navbar-brand m-lg-2">Bookstore Administration</span>
+            </div>
+            <div class="col-2">
+                <!--Added outline class to change look of button-->
+                <a class="btn btn-sm btn-outline-light" href="/account/logout">Log Out</a>
+            </div>
+        </div>
+    </div> 
 </div>
 
 <div class="container-fluid">
